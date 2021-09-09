@@ -1,0 +1,16 @@
+/home/bcb/git/oop/1_lecture/directory/bin/Debug/net5.0/directory
+/home/bcb/git/oop/1_lecture/directory/bin/Debug/net5.0/directory.deps.json
+/home/bcb/git/oop/1_lecture/directory/bin/Debug/net5.0/directory.runtimeconfig.json
+/home/bcb/git/oop/1_lecture/directory/bin/Debug/net5.0/directory.runtimeconfig.dev.json
+/home/bcb/git/oop/1_lecture/directory/bin/Debug/net5.0/directory.dll
+/home/bcb/git/oop/1_lecture/directory/bin/Debug/net5.0/ref/directory.dll
+/home/bcb/git/oop/1_lecture/directory/bin/Debug/net5.0/directory.pdb
+/home/bcb/git/oop/1_lecture/directory/obj/Debug/net5.0/directory.csproj.AssemblyReference.cache
+/home/bcb/git/oop/1_lecture/directory/obj/Debug/net5.0/directory.GeneratedMSBuildEditorConfig.editorconfig
+/home/bcb/git/oop/1_lecture/directory/obj/Debug/net5.0/directory.AssemblyInfoInputs.cache
+/home/bcb/git/oop/1_lecture/directory/obj/Debug/net5.0/directory.AssemblyInfo.cs
+/home/bcb/git/oop/1_lecture/directory/obj/Debug/net5.0/directory.csproj.CoreCompileInputs.cache
+/home/bcb/git/oop/1_lecture/directory/obj/Debug/net5.0/directory.dll
+/home/bcb/git/oop/1_lecture/directory/obj/Debug/net5.0/ref/directory.dll
+/home/bcb/git/oop/1_lecture/directory/obj/Debug/net5.0/directory.pdb
+/home/bcb/git/oop/1_lecture/directory/obj/Debug/net5.0/directory.genruntimeconfig.cache

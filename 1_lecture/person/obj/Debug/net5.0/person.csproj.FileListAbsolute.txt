@@ -1,0 +1,16 @@
+/home/bcb/git/oop/1_lecture/person/bin/Debug/net5.0/person
+/home/bcb/git/oop/1_lecture/person/bin/Debug/net5.0/person.deps.json
+/home/bcb/git/oop/1_lecture/person/bin/Debug/net5.0/person.runtimeconfig.json
+/home/bcb/git/oop/1_lecture/person/bin/Debug/net5.0/person.runtimeconfig.dev.json
+/home/bcb/git/oop/1_lecture/person/bin/Debug/net5.0/person.dll
+/home/bcb/git/oop/1_lecture/person/bin/Debug/net5.0/ref/person.dll
+/home/bcb/git/oop/1_lecture/person/bin/Debug/net5.0/person.pdb
+/home/bcb/git/oop/1_lecture/person/obj/Debug/net5.0/person.csproj.AssemblyReference.cache
+/home/bcb/git/oop/1_lecture/person/obj/Debug/net5.0/person.GeneratedMSBuildEditorConfig.editorconfig
+/home/bcb/git/oop/1_lecture/person/obj/Debug/net5.0/person.AssemblyInfoInputs.cache
+/home/bcb/git/oop/1_lecture/person/obj/Debug/net5.0/person.AssemblyInfo.cs
+/home/bcb/git/oop/1_lecture/person/obj/Debug/net5.0/person.csproj.CoreCompileInputs.cache
+/home/bcb/git/oop/1_lecture/person/obj/Debug/net5.0/person.dll
+/home/bcb/git/oop/1_lecture/person/obj/Debug/net5.0/ref/person.dll
+/home/bcb/git/oop/1_lecture/person/obj/Debug/net5.0/person.pdb
+/home/bcb/git/oop/1_lecture/person/obj/Debug/net5.0/person.genruntimeconfig.cache
