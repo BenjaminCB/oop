@@ -1,0 +1,16 @@
+/home/bcb/git/oop/2_lecture/exercises/bin/Debug/net5.0/exercises
+/home/bcb/git/oop/2_lecture/exercises/bin/Debug/net5.0/exercises.deps.json
+/home/bcb/git/oop/2_lecture/exercises/bin/Debug/net5.0/exercises.runtimeconfig.json
+/home/bcb/git/oop/2_lecture/exercises/bin/Debug/net5.0/exercises.runtimeconfig.dev.json
+/home/bcb/git/oop/2_lecture/exercises/bin/Debug/net5.0/exercises.dll
+/home/bcb/git/oop/2_lecture/exercises/bin/Debug/net5.0/ref/exercises.dll
+/home/bcb/git/oop/2_lecture/exercises/bin/Debug/net5.0/exercises.pdb
+/home/bcb/git/oop/2_lecture/exercises/obj/Debug/net5.0/exercises.csproj.AssemblyReference.cache
+/home/bcb/git/oop/2_lecture/exercises/obj/Debug/net5.0/exercises.GeneratedMSBuildEditorConfig.editorconfig
+/home/bcb/git/oop/2_lecture/exercises/obj/Debug/net5.0/exercises.AssemblyInfoInputs.cache
+/home/bcb/git/oop/2_lecture/exercises/obj/Debug/net5.0/exercises.AssemblyInfo.cs
+/home/bcb/git/oop/2_lecture/exercises/obj/Debug/net5.0/exercises.csproj.CoreCompileInputs.cache
+/home/bcb/git/oop/2_lecture/exercises/obj/Debug/net5.0/exercises.dll
+/home/bcb/git/oop/2_lecture/exercises/obj/Debug/net5.0/ref/exercises.dll
+/home/bcb/git/oop/2_lecture/exercises/obj/Debug/net5.0/exercises.pdb
+/home/bcb/git/oop/2_lecture/exercises/obj/Debug/net5.0/exercises.genruntimeconfig.cache
