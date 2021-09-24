@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 
 namespace Exercises
 {
@@ -8,7 +7,7 @@ namespace Exercises
      * https://stackoverflow.com/questions/5980780/difference-between-icomparable-and-icomparer/13750277
      */
 
-    class Car : IComparable<Car>, IComparer<Car>
+    class Car : IComparable<Car>
     {
         public string Make { get; set; }
         public string Model { get; set; }
@@ -27,15 +26,5 @@ namespace Exercises
         }
 
         public int CompareTo(Car c) => this.Price.CompareTo(c.Price);
-
-        public int Compare(Car a, Car b)
-        {
-            if (a.Make.CompareTo(b.Make) != 0)
-                return a.Make.CompareTo(b.Make);
-            else if (a.Model.CompareTo(b.Model) != 0)
-                return a.Model.CompareTo(b.Model);
-            else
-                return a.Price.CompareTo(b.Price);
-        }
     }
 }
