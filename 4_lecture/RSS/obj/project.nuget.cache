@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "zQeWyVvHAOEzj1F6XQhFxyk1NhwhaamstJzzrM2AS+eF6R9zVxQQZl5wwIEXCcvHiErMfGRi6Mjf8caPTxlnMw==",
+  "success": true,
+  "projectFilePath": "/home/bcb/git/oop/4_lecture/RSS/RSS.csproj",
+  "expectedPackageFiles": [
+    "/home/bcb/.nuget/packages/system.servicemodel.syndication/5.0.0/system.servicemodel.syndication.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
