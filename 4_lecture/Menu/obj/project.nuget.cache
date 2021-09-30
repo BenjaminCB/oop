@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "oHe7n6LbRs+w9F4IWydgsaGSITR3P9nNjlP5+17LU69bZEdAuPTfNrgS+ggndgzWplmltMbG1TdgWntpoRChpQ==",
+  "dgSpecHash": "IfZXv4IV3U3XtxW4ShRgRYQ2pLUFoO65y4vBVH8fFSfq2JGCMUhDK/DT6xbNqdClJCPDmx4LqZw29MdUSLyLjQ==",
   "success": true,
   "projectFilePath": "/home/bcb/git/oop/4_lecture/Menu/Menu.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/bcb/.nuget/packages/system.servicemodel.syndication/5.0.0/system.servicemodel.syndication.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
