@@ -1,4 +1,6 @@
-﻿namespace Menu
+﻿using System.IO;
+
+namespace Menu
 {
     class Program
     {
@@ -13,8 +15,13 @@
             Menu underMenu = new Menu( "undermenu"
                                      , new MenuItem("testpunkt")
                                      , new MenuItem("testpunkt2") );
-
             menu.Add(underMenu);
+
+            InfiniteMenu infinite = new InfiniteMenu("INFINITE");
+            menu.Add(infinite);
+
+            DirectoryItem fsm = new DirectoryItem( new DirectoryInfo("/home/bcb/") );
+            menu.Add(fsm);
 
             menu.Start();
         }

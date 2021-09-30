@@ -6,7 +6,7 @@ namespace Menu
     class Menu : IMenuItem
     {
         public string Title { get; }
-        private List<IMenuItem> Items = new List<IMenuItem>();
+        protected List<IMenuItem> Items = new List<IMenuItem>();
         private bool _Running;
         private int _SelectedItem;
 
@@ -26,13 +26,21 @@ namespace Menu
             }
         }
 
-        public void Select()
+        public virtual void Select()
         {
             Console.Clear();
             Start();
         }
 
         public void Add(IMenuItem item) => Items.Add(item);
+
+        public void Add(params IMenuItem[] items)
+        {
+            foreach (IMenuItem item in items)
+            {
+                Items.Add(item);
+            }
+        }
 
         public void Start()
         {
@@ -96,7 +104,7 @@ namespace Menu
 
         private void MoveDown()
         {
-            if (_SelectedItem == Items.Count) return;
+            if (_SelectedItem + 1 == Items.Count) return;
             else _SelectedItem++;
         }
     }
