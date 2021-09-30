@@ -1,0 +1,16 @@
+/home/bcb/git/oop/4_lecture/Menu/bin/Debug/net5.0/Menu
+/home/bcb/git/oop/4_lecture/Menu/bin/Debug/net5.0/Menu.deps.json
+/home/bcb/git/oop/4_lecture/Menu/bin/Debug/net5.0/Menu.runtimeconfig.json
+/home/bcb/git/oop/4_lecture/Menu/bin/Debug/net5.0/Menu.runtimeconfig.dev.json
+/home/bcb/git/oop/4_lecture/Menu/bin/Debug/net5.0/Menu.dll
+/home/bcb/git/oop/4_lecture/Menu/bin/Debug/net5.0/ref/Menu.dll
+/home/bcb/git/oop/4_lecture/Menu/bin/Debug/net5.0/Menu.pdb
+/home/bcb/git/oop/4_lecture/Menu/obj/Debug/net5.0/Menu.csproj.AssemblyReference.cache
+/home/bcb/git/oop/4_lecture/Menu/obj/Debug/net5.0/Menu.GeneratedMSBuildEditorConfig.editorconfig
+/home/bcb/git/oop/4_lecture/Menu/obj/Debug/net5.0/Menu.AssemblyInfoInputs.cache
+/home/bcb/git/oop/4_lecture/Menu/obj/Debug/net5.0/Menu.AssemblyInfo.cs
+/home/bcb/git/oop/4_lecture/Menu/obj/Debug/net5.0/Menu.csproj.CoreCompileInputs.cache
+/home/bcb/git/oop/4_lecture/Menu/obj/Debug/net5.0/Menu.dll
+/home/bcb/git/oop/4_lecture/Menu/obj/Debug/net5.0/ref/Menu.dll
+/home/bcb/git/oop/4_lecture/Menu/obj/Debug/net5.0/Menu.pdb
+/home/bcb/git/oop/4_lecture/Menu/obj/Debug/net5.0/Menu.genruntimeconfig.cache

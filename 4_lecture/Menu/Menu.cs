@@ -8,13 +8,13 @@ namespace Menu
         public string Title { get; }
         private List<IMenuItem> Items = new List<IMenuItem>();
         private bool _Running;
-        private int _Pos;
+        private int _SelectedItem;
 
         public Menu(string title)
         {
             Title = title;
             _Running = false;
-            _Pos = 0;
+            _SelectedItem = 0;
         }
 
         public Menu(string title, params IMenuItem[] items)
@@ -32,6 +32,8 @@ namespace Menu
             Start();
         }
 
+        public void Add(IMenuItem item) => Items.Add(item);
+
         public void Start()
         {
             _Running = true;
@@ -47,22 +49,55 @@ namespace Menu
             Console.Clear();
             for (int i = 0; i < Items.Count; i++)
             {
-                if (i == _Pos)
+                if (i == _SelectedItem)
                 {
                     Console.BackgroundColor = ConsoleColor.DarkBlue;
-                    Console.WriteLine(Items[i]);
+                    Console.WriteLine(Items[i].Title);
                     Console.BackgroundColor = ConsoleColor.Black;
                 }
                 else
                 {
-                    Console.WriteLine(Items[i]);
+                    Console.WriteLine(Items[i].Title);
                 }
             }
         }
 
+        // input is with vim keybinds
+        // TODO: get it like ranger
+        // to that menus will have to stay running unless the selected item is not another menu
         private void HandleInput()
         {
+            ConsoleKeyInfo CKI = Console.ReadKey();
+            switch (CKI.Key)
+            {
+                case ConsoleKey.H:
+                    _Running = false;
+                    break;
+                case ConsoleKey.J:
+                    MoveDown();
+                    break;
+                case ConsoleKey.K:
+                    MoveUp();
+                    break;
+                case ConsoleKey.L:
+                    _Running = false;
+                    Items[_SelectedItem].Select();
+                    break;
+                default:
+                    break;
+            }
+        }
 
+        private void MoveUp()
+        {
+            if (_SelectedItem == 0) return;
+            else _SelectedItem--;
+        }
+
+        private void MoveDown()
+        {
+            if (_SelectedItem == Items.Count) return;
+            else _SelectedItem++;
         }
     }
 }

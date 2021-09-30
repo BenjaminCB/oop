@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Menu
+﻿namespace Menu
 {
     class Program
     {
