@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Menu
 {
-    class Menu : IMenuItem
+    abstract class Menu : IMenuItem
     {
         public string Title { get; }
         protected List<IMenuItem> Items = new List<IMenuItem>();
@@ -16,26 +16,7 @@ namespace Menu
             _Pos = 0;
         }
 
-        public Menu(string title, params IMenuItem[] items)
-        : this(title)
-        {
-            foreach (IMenuItem item in items)
-            {
-                Items.Add(item);
-            }
-        }
-
         public virtual void Select() {}
-
-        public void Add(IMenuItem item) => Items.Add(item);
-
-        public void Add(params IMenuItem[] items)
-        {
-            foreach (IMenuItem item in items)
-            {
-                Items.Add(item);
-            }
-        }
 
         public void Draw()
         {

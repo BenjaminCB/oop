@@ -34,7 +34,7 @@ namespace Menu
             switch (CKI.Key)
             {
                 case ConsoleKey.Q:
-                    _Running = false;
+                    _Quit();
                     break;
                 case ConsoleKey.H:
                     _GoBack();
@@ -51,6 +51,12 @@ namespace Menu
                 default:
                     break;
             }
+        }
+
+        private void _Quit()
+        {
+            Console.Clear();
+            _Running = false;
         }
 
         private void _GoBack()

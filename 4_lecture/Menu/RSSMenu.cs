@@ -4,7 +4,7 @@ using System.Xml;
 
 namespace Menu
 {
-    class RSSMenu : Menu, IMenuItem
+    class RSSMenu : Menu
     {
         private Uri _Uri;
 

@@ -2,11 +2,11 @@ using System.IO;
 
 namespace Menu
 {
-    class DirectoryItem : Menu, IMenuItem
+    class DirectoryMenu : Menu
     {
         private DirectoryInfo _Dir;
 
-        public DirectoryItem(DirectoryInfo dir) : base("Directory: " + dir.Name)
+        public DirectoryMenu(DirectoryInfo dir) : base("Directory: " + dir.Name)
         {
             _Dir = dir;
         }
@@ -15,7 +15,7 @@ namespace Menu
         {
             foreach (DirectoryInfo dir in _Dir.EnumerateDirectories())
             {
-                Items.Add(new DirectoryItem(dir));
+                Items.Add(new DirectoryMenu(dir));
             }
 
             foreach (FileInfo file in _Dir.EnumerateFiles())
