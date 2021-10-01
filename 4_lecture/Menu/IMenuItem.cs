@@ -4,5 +4,8 @@ namespace Menu
     {
         string Title { get; }
         void Select();
+        void Draw();
+        void MoveUp();
+        void MoveDown();
     }
 }

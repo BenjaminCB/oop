@@ -13,10 +13,15 @@ namespace Menu
             _Item = item;
         }
 
-        public void Select()
+        public void Select() {}
+
+        public void Draw()
         {
             Console.Clear();
             Console.WriteLine(_Item.Summary.Text);
         }
+
+        public void MoveUp() {}
+        public void MoveDown() {}
     }
 }

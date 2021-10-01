@@ -7,14 +7,13 @@ namespace Menu
     {
         public string Title { get; }
         protected List<IMenuItem> Items = new List<IMenuItem>();
-        private bool _Running;
-        private int _SelectedItem;
+        public IMenuItem SelectedItem { get => Items[_Pos]; }
+        private int _Pos;
 
         public Menu(string title)
         {
             Title = title;
-            _Running = false;
-            _SelectedItem = 0;
+            _Pos = 0;
         }
 
         public Menu(string title, params IMenuItem[] items)
@@ -29,7 +28,6 @@ namespace Menu
         public virtual void Select()
         {
             Console.Clear();
-            Start();
         }
 
         public void Add(IMenuItem item) => Items.Add(item);
@@ -42,22 +40,12 @@ namespace Menu
             }
         }
 
-        public void Start()
-        {
-            _Running = true;
-            while (_Running)
-            {
-                DrawMenu();
-                HandleInput();
-            }
-        }
-
-        private void DrawMenu()
+        public void Draw()
         {
             Console.Clear();
             for (int i = 0; i < Items.Count; i++)
             {
-                if (i == _SelectedItem)
+                if (i == _Pos)
                 {
                     Console.BackgroundColor = ConsoleColor.DarkBlue;
                     Console.WriteLine(Items[i].Title);
@@ -70,42 +58,16 @@ namespace Menu
             }
         }
 
-        // input is with vim keybinds
-        // TODO: get it like ranger
-        // to that menus will have to stay running unless the selected item is not another menu
-        private void HandleInput()
+        public void MoveUp()
         {
-            ConsoleKeyInfo CKI = Console.ReadKey();
-            switch (CKI.Key)
-            {
-                case ConsoleKey.H:
-                    _Running = false;
-                    break;
-                case ConsoleKey.J:
-                    MoveDown();
-                    break;
-                case ConsoleKey.K:
-                    MoveUp();
-                    break;
-                case ConsoleKey.L:
-                    _Running = false;
-                    Items[_SelectedItem].Select();
-                    break;
-                default:
-                    break;
-            }
+            if (_Pos == 0) return;
+            else _Pos--;
         }
 
-        private void MoveUp()
+        public void MoveDown()
         {
-            if (_SelectedItem == 0) return;
-            else _SelectedItem--;
-        }
-
-        private void MoveDown()
-        {
-            if (_SelectedItem + 1 == Items.Count) return;
-            else _SelectedItem++;
+            if (_Pos + 1 == Items.Count) return;
+            else _Pos++;
         }
     }
 }

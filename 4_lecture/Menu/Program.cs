@@ -33,7 +33,9 @@ namespace Menu
             RSSMenu rss3 = new RSSMenu(new Uri("http://www.dr.dk/Nyheder/Service/rss.htm"));
             menu.Add(rss3);
 
-            menu.Start();
+            MenuController MC = new MenuController(menu);
+
+            MC.Start();
         }
     }
 }

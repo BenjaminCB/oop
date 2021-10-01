@@ -19,10 +19,15 @@ namespace Menu
             _Content = content;
         }
 
-        public void Select()
+        public void Select() {}
+
+        public void Draw()
         {
             Console.Clear();
             Console.WriteLine(_Content);
         }
+
+        public void MoveUp() {}
+        public void MoveDown() {}
     }
 }
