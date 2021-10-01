@@ -20,8 +20,28 @@ namespace Menu
 
         public void Draw()
         {
+            int Start,
+                End;
+
+            // find the viewing indencies
+            if (Items.Count <= 10)
+            {
+                Start = 0;
+                End = Items.Count;
+            }
+            else if (_Pos < 10)
+            {
+                Start = 0;
+                End = 10;
+            }
+            else
+            {
+                Start = _Pos - 9;
+                End = _Pos + 1;
+            }
+
             Console.Clear();
-            for (int i = 0; i < Items.Count; i++)
+            for (int i = Start; i < End; i++)
             {
                 if (i == _Pos)
                 {
