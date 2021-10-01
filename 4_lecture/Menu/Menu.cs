@@ -59,7 +59,7 @@ namespace Menu
         public void MoveUp()
         {
             if (_Pos == 0) return;
-            else _Pos--;
+            _Pos--;
         }
 
         public void MoveDown()
