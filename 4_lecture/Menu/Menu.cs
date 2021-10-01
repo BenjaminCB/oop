@@ -25,10 +25,7 @@ namespace Menu
             }
         }
 
-        public virtual void Select()
-        {
-            Console.Clear();
-        }
+        public virtual void Select() {}
 
         public void Add(IMenuItem item) => Items.Add(item);
 

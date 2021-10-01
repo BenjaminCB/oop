@@ -16,4 +16,3 @@
 /home/bcb/git/oop/4_lecture/Menu/obj/Debug/net5.0/Menu.genruntimeconfig.cache
 /home/bcb/git/oop/4_lecture/Menu/bin/Debug/net5.0/System.ServiceModel.Syndication.dll
 /home/bcb/git/oop/4_lecture/Menu/obj/Debug/net5.0/Menu.csproj.CopyComplete
-/home/bcb/git/oop/4_lecture/Menu/obj/Debug/net5.0/Menu.csprojAssemblyReference.cache

@@ -11,6 +11,7 @@ namespace Menu
 
         public MenuController(IMenuItem menu)
         {
+            _Menus = new Stack<IMenuItem>();
             _Menus.Push(menu);
         }
 
@@ -52,12 +53,21 @@ namespace Menu
             }
         }
 
-        private void _GoBack() => _Menus.Pop();
+        private void _GoBack()
+        {
+            if (_Menus.Count > 1)
+            {
+                _Menus.Pop();
+            }
+        }
 
         private void _GoForward()
         {
-            _Menus.Push(_Current.selectedItem);
-            _Current.Select();
+            if (_Current is Menu m)
+            {
+                _Menus.Push(m.SelectedItem);
+                _Current.Select();
+            }
         }
     }
 }
