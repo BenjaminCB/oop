@@ -26,8 +26,5 @@ namespace Menu
             Console.Clear();
             Console.WriteLine(_Content);
         }
-
-        public void MoveUp() {}
-        public void MoveDown() {}
     }
 }

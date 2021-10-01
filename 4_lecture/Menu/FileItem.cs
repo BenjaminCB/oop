@@ -29,8 +29,5 @@ namespace Menu
                 Console.WriteLine(temp.GetString(b));
             }
         }
-
-        public void MoveUp() {}
-        public void MoveDown() {}
     }
 }

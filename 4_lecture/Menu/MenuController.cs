@@ -43,10 +43,10 @@ namespace Menu
                     _GoForward();
                     break;
                 case ConsoleKey.J:
-                    _Current.MoveDown();
+                    _MoveDown();
                     break;
                 case ConsoleKey.K:
-                    _Current.MoveUp();
+                    _MoveUp();
                     break;
                 default:
                     break;
@@ -73,6 +73,22 @@ namespace Menu
             {
                 _Menus.Push(m.SelectedItem);
                 _Current.Select();
+            }
+        }
+
+        private void _MoveDown()
+        {
+            if (_Current is IScrollable s)
+            {
+                s.MoveDown();
+            }
+        }
+
+        private void _MoveUp()
+        {
+            if (_Current is IScrollable s)
+            {
+                s.MoveUp();
             }
         }
     }

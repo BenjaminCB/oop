@@ -10,9 +10,5 @@ namespace Menu
 
         // How do you draw this item once it has been selected
         void Draw();
-
-        // How should you scroll throught the item
-        void MoveUp();
-        void MoveDown();
     }
 }

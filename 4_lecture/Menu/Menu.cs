@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Menu
 {
-    abstract class Menu : IMenuItem
+    abstract class Menu : IMenuItem, IScrollable
     {
         public string Title { get; }
         protected List<IMenuItem> Items = new List<IMenuItem>();
