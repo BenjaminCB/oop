@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/bcb/git/oop/4_lecture/Menu/Menu.csproj": {}
+    "/home/bcb/git/oop/5_lecture/Exercises/Exercises.csproj": {}
   },
   "projects": {
-    "/home/bcb/git/oop/4_lecture/Menu/Menu.csproj": {
+    "/home/bcb/git/oop/5_lecture/Exercises/Exercises.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/bcb/git/oop/4_lecture/Menu/Menu.csproj",
-        "projectName": "Menu",
-        "projectPath": "/home/bcb/git/oop/4_lecture/Menu/Menu.csproj",
+        "projectUniqueName": "/home/bcb/git/oop/5_lecture/Exercises/Exercises.csproj",
+        "projectName": "Exercises",
+        "projectPath": "/home/bcb/git/oop/5_lecture/Exercises/Exercises.csproj",
         "packagesPath": "/home/bcb/.nuget/packages/",
-        "outputPath": "/home/bcb/git/oop/4_lecture/Menu/obj/",
+        "outputPath": "/home/bcb/git/oop/5_lecture/Exercises/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/bcb/.nuget/NuGet/NuGet.Config"
@@ -37,12 +37,6 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "dependencies": {
-            "System.ServiceModel.Syndication": {
-              "target": "Package",
-              "version": "[5.0.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
