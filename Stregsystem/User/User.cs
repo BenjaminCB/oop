@@ -8,11 +8,14 @@ namespace Stregsystem.User
     public class User : IComparable<User>
     {
         public int Id { get; }
+        private static int _Id = 1;
+
         public string Firstname { get; }
         public string Lastname { get; }
 
         // can only have 0-9 a-z and '_'
         public string Username { get; }
+        // TODO check correctness
         private Regex _UsernameValidator = new Regex(@"^[a-z0-9_]+$");
 
 
@@ -26,12 +29,11 @@ namespace Stregsystem.User
         // ([^\W-])+ capture at least one letter or number
         // (\.([^\W_]|[.-])+)+ capture at least one . followed by atleast one
         // letter number or .-
+        // TODO check correctness
         private Regex _EmailValidator =
             new Regex(@"^[\w.-]+@([^\W_])+-*(\.([^\W_]|[.-])+)+([^\W_])+$");
 
         public int Balance { get; private set; }
-
-        private static int _Id = 0;
 
         public User(string fullname, string username, string email)
         {
