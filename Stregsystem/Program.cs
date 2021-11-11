@@ -6,7 +6,10 @@ namespace Stregsystem
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            User u = new User("Benjamin Bennetzen", "bcb", "bbenne20@student.aau.dk");
+            Console.WriteLine(u);
+            Transaction t = new InsertCashTransaction(u, 1000);
+            Console.WriteLine(t);
         }
     }
 }

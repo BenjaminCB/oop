@@ -1,6 +1,6 @@
 using System;
 
-namespace Stregsystem.Product
+namespace Stregsystem
 {
     public class SeasonalProduct : Product
     {

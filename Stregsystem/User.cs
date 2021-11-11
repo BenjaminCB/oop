@@ -3,7 +3,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using Stregsystem.Exception;
 
-namespace Stregsystem.User
+namespace Stregsystem
 {
     public class User : IComparable<User>
     {
@@ -33,7 +33,7 @@ namespace Stregsystem.User
         private Regex _EmailValidator =
             new Regex(@"^[\w.-]+@([^\W_])+-*(\.([^\W_]|[.-])+)+([^\W_])+$");
 
-        public int Balance { get; private set; }
+        public int Balance { get; set; }
 
         public User(string fullname, string username, string email)
         {
