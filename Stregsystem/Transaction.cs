@@ -1,4 +1,5 @@
 using System;
+using Stregsystem.Exception;
 
 namespace Stregsystem
 {
@@ -9,7 +10,16 @@ namespace Stregsystem
 
         public User User { get; }
         public DateTime Date { get; }
-        public int Amount { get; }
+        private int _Amount;
+        public int Amount
+        {
+            get => _Amount;
+            protected set
+            {
+                if (value < 0) throw new NegativeAmountException();
+                _Amount = value;
+            }
+        }
 
         public Transaction(User user, int amount)
         {
@@ -22,6 +32,6 @@ namespace Stregsystem
         public abstract void Execute();
 
         public override string ToString() =>
-            $"{User} made {this.GetType().Name} ({Id}) for {Amount} at {Date}";
+            $"{this.GetType().Name} ({Id}) at {Date}: {User} transaction amount {Amount}";
     }
 }
