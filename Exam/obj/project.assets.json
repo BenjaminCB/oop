@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/bcb/git/oop/Exam/Stregsystem.csproj",
-      "projectName": "Stregsystem",
-      "projectPath": "/home/bcb/git/oop/Exam/Stregsystem.csproj",
+      "projectUniqueName": "/home/bcb/git/oop/Exam/Exam.csproj",
+      "projectName": "Exam",
+      "projectPath": "/home/bcb/git/oop/Exam/Exam.csproj",
       "packagesPath": "/home/bcb/.nuget/packages/",
       "outputPath": "/home/bcb/git/oop/Exam/obj/",
       "projectStyle": "PackageReference",
