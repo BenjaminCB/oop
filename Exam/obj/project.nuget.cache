@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Tzkf1VsatHS3MrXVlY0k5Me41CZjIQd8tKbquB2ajN6akb6o8wsRFE8eX3WABE+JQBJaMnjGZnlI5VtgZlVORQ==",
+  "success": true,
+  "projectFilePath": "/home/bcb/git/oop/Exam/Stregsystem.csproj",
+  "expectedPackageFiles": [
+    "/home/bcb/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
