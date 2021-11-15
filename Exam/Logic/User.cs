@@ -36,6 +36,9 @@ namespace Exam.Logic
         public int Balance { get; set; }
 
         public User(string fullname, string username, string email)
+            : this(fullname, username, 0, email) {}
+
+        public User(string fullname, string username, int balance, string email)
         {
             // we will assume that there will never be 2^31 members
             Id = _Id++;
@@ -49,11 +52,11 @@ namespace Exam.Logic
                 throw new InvalidUsernameException();
             Username = username;
 
+            Balance = balance;
+
             if (!_EmailValidator.IsMatch(email))
                 throw new InvalidEmailException();
             Email = email;
-
-            Balance = 0;
         }
 
         // smaller id should preceed bigger id

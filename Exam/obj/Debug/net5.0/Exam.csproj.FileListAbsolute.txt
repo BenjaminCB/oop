@@ -5,7 +5,6 @@
 /home/bcb/git/oop/Exam/bin/Debug/net5.0/Exam.dll
 /home/bcb/git/oop/Exam/bin/Debug/net5.0/ref/Exam.dll
 /home/bcb/git/oop/Exam/bin/Debug/net5.0/Exam.pdb
-/home/bcb/git/oop/Exam/obj/Debug/net5.0/Exam.csprojAssemblyReference.cache
 /home/bcb/git/oop/Exam/obj/Debug/net5.0/Exam.GeneratedMSBuildEditorConfig.editorconfig
 /home/bcb/git/oop/Exam/obj/Debug/net5.0/Exam.AssemblyInfoInputs.cache
 /home/bcb/git/oop/Exam/obj/Debug/net5.0/Exam.AssemblyInfo.cs
@@ -14,3 +13,4 @@
 /home/bcb/git/oop/Exam/obj/Debug/net5.0/ref/Exam.dll
 /home/bcb/git/oop/Exam/obj/Debug/net5.0/Exam.pdb
 /home/bcb/git/oop/Exam/obj/Debug/net5.0/Exam.genruntimeconfig.cache
+/home/bcb/git/oop/Exam/obj/Debug/net5.0/Exam.csproj.AssemblyReference.cache

@@ -14,13 +14,13 @@ namespace Exam.Logic
         public virtual bool Active { get; set; }
         public bool CanBeBoughtOnCredit { get; }
 
-        public Product(string name, int price, bool canBeBoughtOnCredit)
+        public Product(string name, int price, bool active)
         {
             Id = _Id++;
             Name = name;
             Price = price;
-            Active = true;
-            CanBeBoughtOnCredit = canBeBoughtOnCredit;
+            Active = active;
+            CanBeBoughtOnCredit = false;
         }
 
         public override string ToString() => $"{Id}: {Name} - {(double) Price / 100} kr";

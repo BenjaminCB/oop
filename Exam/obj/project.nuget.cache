@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4mFZvmVvpvu7sP1/B+hT9N9xNrLSHJ9z/Ce0sjo3rzKh+NZOfzM4vuxLAIgEjs4rEbAWdnvTMxv4dY542k0xng==",
+  "dgSpecHash": "Zf3NvH4hKF+ExrLZpETr/DrjFbzc1/QeOKQixI5evCi0h6OUzcENIAHaXOLxi+rop0xXob4QGiVQ5Am3EeaEzw==",
   "success": true,
   "projectFilePath": "/home/bcb/git/oop/Exam/Exam.csproj",
-  "expectedPackageFiles": [
-    "/home/bcb/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }
