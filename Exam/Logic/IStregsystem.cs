@@ -12,7 +12,6 @@ namespace Exam.Logic
         IEnumerable<Transaction> GetTransactions(User user, int n);
         IEnumerable<User> GetUsers(Func<User, bool> prodicate);
         User GetUserByUsername(string username);
-        // TODO event
-        /* event UserBalanceNotification UserBalanceWarning; */
+        event EventHandler<UserBalanceWarningEventArgs> UserBalanceWarning;
     }
 }

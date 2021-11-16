@@ -32,6 +32,12 @@ namespace Exam.Logic
         {
             t.Execute();
             Transactions.Add(t);
+            if (t.User.Balance < 500)
+            {
+                UserBalanceWarningEventArgs args = new UserBalanceWarningEventArgs();
+                args.User = t.User;
+                OnUserBalanceWorning(args);
+            }
 
             // TODO check if this writes everything and overwrites on restart
             // Probably should do this async
@@ -64,6 +70,13 @@ namespace Exam.Logic
         public IEnumerable<Product> ActiveProducts
         {
             get => Products.Where(p => p.Active);
+        }
+
+        public event EventHandler<UserBalanceWarningEventArgs> UserBalanceWarning;
+
+        private void OnUserBalanceWorning(UserBalanceWarningEventArgs e)
+        {
+            if (UserBalanceWarning != null) UserBalanceWarning(this, e);
         }
     }
 }
