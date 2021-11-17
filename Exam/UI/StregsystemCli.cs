@@ -28,11 +28,9 @@ namespace Exam.UI
             Rule input = new Rule("[bold]INPUT[/]");
             input.Centered();
 
-            Panel instructions = new Panel("These are the instructions");
-            instructions.Header = new PanelHeader("[bold]Instructions[/]");
-
-            Panel products = new Panel("These are the products");
-            products.Header = new PanelHeader("[bold]Products[/]");
+            Panel instructionsPanel = new Panel("These are the instructions");
+            instructionsPanel.Header = new PanelHeader("[bold]Instructions[/]");
+            instructionsPanel.Expand = true;
 
             PanelHeader responseHeader = new PanelHeader("[bold]Responses[/]");
 
@@ -41,20 +39,45 @@ namespace Exam.UI
                 AnsiConsole.Clear();
                 AnsiConsole.Write(header);
 
-                // Display instructions
-                AnsiConsole.Write(instructions);
+                // Create table that will contain the product table and response panel
+                Table table = new Table();
+                table.Border = TableBorder.None;
 
-                // Display active products
-                AnsiConsole.Write(products);
+                // product table
+                table.AddColumn(new TableColumn(_ProductTable()));
 
-                // Dispaly recent reponse
+                // add response panel
                 _DisplayReponse.Header = responseHeader;
-                AnsiConsole.Write(_DisplayReponse);
+                _DisplayReponse.Expand = true;
+                table.AddColumn(new TableColumn(_DisplayReponse));
+
+                AnsiConsole.Write(table);
+
+                // Display instructions
+                AnsiConsole.Write(instructionsPanel);
 
                 // Take user input
                 AnsiConsole.Write(input);
                 string command = Console.ReadLine();
             }
+        }
+
+        private Table _ProductTable()
+        {
+            var table = new Table()
+                .AddColumn(new TableColumn("ID"))
+                .AddColumn(new TableColumn("Product"))
+                .AddColumn(new TableColumn("Price"));
+
+            foreach (Product p in _Stregsystem.ActiveProducts)
+            {
+                // Spectre seems a little funky when using AddRow
+                // so i have to convert to strings manually
+                double price = (double) p.Price / 100;
+                table.AddRow(p.Id.ToString(), p.Name, price.ToString());
+            }
+
+            return table;
         }
 
         public void Close() => _Running = false;
@@ -67,12 +90,10 @@ namespace Exam.UI
         }
 
         public void UserNotFound(string username) =>
-            _DisplayReponse = new Panel("");
-            /* _DisplayReponse = () => Console.WriteLine($"User [{username}] not found!"); */
+            _DisplayReponse = new Panel($"User [{username}] not found!");
 
         public void ProductNotFound(string product) =>
-            _DisplayReponse = new Panel("");
-            /* _DisplayReponse = () => Console.WriteLine($"Product [{product}] not found!"); */
+            _DisplayReponse = new Panel($"Product [{product}] not found!");
 
         public void UserInfo(User user)
         {
@@ -97,26 +118,21 @@ namespace Exam.UI
         }
 
         public void TooManyArgumentsError(string command) =>
-            _DisplayReponse = new Panel("");
-            /* _DisplayReponse = () => Console.WriteLine($"Command [{command}] has too many arguments!"); */
+            _DisplayReponse = new Panel($"Command [{command}] has too many arguments!");
 
         public void UserBuysProduct(BuyTransaction transaction) =>
-            _DisplayReponse = new Panel("");
-            /* _DisplayReponse = () => Console.WriteLine(transaction); */
+            _DisplayReponse = new Panel(transaction.ToString());
 
         public void UserBuysProduct(int n, BuyTransaction transaction) =>
-            _DisplayReponse = new Panel("");
-            /* _DisplayReponse = () => Console.WriteLine($"{transaction}x{n}."); */
+            _DisplayReponse = new Panel($"{transaction}x{n}");
 
         public void GeneralError(string errorString) =>
-            _DisplayReponse = new Panel("");
-            /* _DisplayReponse = () => Console.WriteLine($"Error: {errorString}"); */
+            _DisplayReponse = new Panel($"Error: {errorString}");
 
         public void InsufficientCash(User user, Product product) =>
-            _DisplayReponse = new Panel("");
-            /* _DisplayReponse = () => Console.WriteLine */
-            /* ( */
-            /*     $"{user} tried purchasing {product} while only having a balance of {user.Balance}." */
-            /* ); */
+            _DisplayReponse = new Panel
+            (
+                $"{user} tried purchasing {product} while only having a balance of {user.Balance}."
+            );
     }
 }
