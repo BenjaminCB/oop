@@ -4,7 +4,7 @@ using Exam.Parser;
 using System.Collections.Generic;
 using System.Linq;
 using Exam.Logic;
-using Microsoft.VisualBasic.FileIO;
+using Exam.UI;
 
 namespace Exam
 {
@@ -12,13 +12,10 @@ namespace Exam
     {
         static void Main(string[] args)
         {
-            FileInfo file = new FileInfo(Path.Combine(Directory.GetCurrentDirectory(), "users.csv"));
-            UserCSVParser parser = new UserCSVParser(file, ',');
-            IEnumerable<User> us = parser.Parse();
-            foreach (User u in us)
-            {
-                Console.WriteLine(u);
-            }
+            IStregsystem stregsystem = new Stregsystem();
+            IStregsystemUI stregsystemUI = new StregsystemCLI(stregsystem);
+            stregsystemUI.UserInfo(stregsystem.GetUsers(u => true).First());
+            stregsystemUI.Start();
         }
     }
 }

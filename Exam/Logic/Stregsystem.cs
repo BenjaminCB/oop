@@ -2,24 +2,45 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
+using Exam.Parser;
 using Exam.Exception;
 
 namespace Exam.Logic
 {
-    public class StregsystemController : IStregsystem
+    public class Stregsystem : IStregsystem
     {
         public List<User> Users { get; }
         public List<Product> Products { get; }
         public List<Transaction> Transactions { get; }
         private string _LogFile;
 
-        public StregsystemController()
+        public Stregsystem()
         {
+            // Got errors when typecasting IEnumerable<User> to List<User>
+            // so doing it this way
+            // Parse orders from file
+            FileInfo userFile = new FileInfo(Path.Combine(Directory.GetCurrentDirectory(), "users.csv"));
+            UserCSVParser userParser = new UserCSVParser(userFile, ',');
+            var us = userParser.Parse();
+
             Users = new List<User>();
+            foreach (User u in us)
+                Users.Add(u);
+
+            // Parse products from file
+            FileInfo productFile = new FileInfo(Path.Combine(Directory.GetCurrentDirectory(), "products.csv"));
+            ProductCSVParser productParser = new ProductCSVParser(productFile, ';');
+            var ps = productParser.Parse();
+
             Products = new List<Product>();
+            foreach(Product p in ps)
+                Products.Add(p);
+
             Transactions = new List<Transaction>();
             _LogFile = Path.Combine(Directory.GetCurrentDirectory(), "Data", "TransactionLog");
         }
+
+        public void AddUser(User user) => Users.Add(user);
 
         public BuyTransaction BuyProduct(User user, Product product) =>
             new BuyTransaction(user, product);
@@ -41,7 +62,7 @@ namespace Exam.Logic
 
             // TODO check if this writes everything and overwrites on restart
             // Probably should do this async
-            using StreamWriter file = new StreamWriter(_LogFile);
+            using StreamWriter file = File.AppendText(_LogFile);
             file.WriteLine(t);
         }
 

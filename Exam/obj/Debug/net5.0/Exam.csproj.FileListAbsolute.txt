@@ -14,3 +14,6 @@
 /home/bcb/git/oop/Exam/obj/Debug/net5.0/Exam.pdb
 /home/bcb/git/oop/Exam/obj/Debug/net5.0/Exam.genruntimeconfig.cache
 /home/bcb/git/oop/Exam/obj/Debug/net5.0/Exam.csproj.AssemblyReference.cache
+/home/bcb/git/oop/Exam/bin/Debug/net5.0/Spectre.Console.dll
+/home/bcb/git/oop/Exam/bin/Debug/net5.0/Wcwidth.dll
+/home/bcb/git/oop/Exam/obj/Debug/net5.0/Exam.csproj.CopyComplete
