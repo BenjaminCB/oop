@@ -82,31 +82,19 @@ namespace Exam.UI
                 transactions += t + "\n";
             }
 
+            string warning = user.Balance < 50 ? "Warning balance under 50" : "";
+
             _DisplayReponse = new Panel
             (
-                user + "\n" +
-                "Username: " + user.Username + "\n" +
-                "Balance: " + user.Balance + "\n" +
-                (user.Balance < 50 ? "Warning balance under 50\n" : "") + "\n" +
-                "Purchases\n" +
-                transactions
+                String.Join( '\n'
+                           , user
+                           , $"Username: {user.Username}"
+                           , $"Balance: {user.Balance}"
+                           , warning
+                           , "Purchases"
+                           , transactions )
             );
         }
-            /* _DisplayReponse = () => */
-            /* { */
-            /*     Console.WriteLine(user); */
-            /*     Console.WriteLine($"Username: {user.Username}"); */
-            /*     Console.WriteLine($"Balance: {user.Balance}"); */
-            /*     if (user.Balance < 50) */
-            /*         Console.WriteLine("Warning balance under 50"); */
-
-            /*     Console.WriteLine(""); */
-            /*     Console.WriteLine("Purchases"); */
-            /*     foreach(Transaction t in _Stregsystem.GetTransactions(user, 10)) */
-            /*     { */
-            /*         Console.WriteLine(t); */
-            /*     } */
-            /* }; */
 
         public void TooManyArgumentsError(string command) =>
             _DisplayReponse = new Panel("");
