@@ -37,7 +37,7 @@ namespace Exam.Logic
                 Products.Add(p);
 
             Transactions = new List<Transaction>();
-            _LogFile = Path.Combine(Directory.GetCurrentDirectory(), "Data", "TransactionLog");
+            _LogFile = Path.Combine(Directory.GetCurrentDirectory(), "Data", "TransactionLog.txt");
         }
 
         public void AddUser(User user) => Users.Add(user);
