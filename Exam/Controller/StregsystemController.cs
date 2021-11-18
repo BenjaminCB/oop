@@ -16,13 +16,9 @@ namespace Exam.Controller
             StregsystemUI = stregsystemUI;
             Parser = new StregsystemCommandParser(stregsystem, stregsystemUI);
 
-            Stregsystem.UserBalanceWarning += HandleUserBalanceWarning;
+            Stregsystem.UserBalanceWarning += (_,args) =>
+                StregsystemUI.GeneralMessage($"User [{args.User.Username}] balance is below 50!");
             StregsystemUI.CommandEntered += (_,args) => Parser.ParseCommand(args.Command);
-        }
-
-        void HandleUserBalanceWarning(object sender, UserBalanceWarningEventArgs args)
-        {
-            // TODO display warning
         }
     }
 }

@@ -37,10 +37,25 @@ namespace Exam.Parser
             if (_AdminCommands.ContainsKey(cmd))
             {
                 _AdminCommands[cmd](args);
+                return;
             }
-            else
+
+            // if it is not an admin command we will try and parse it as a user command
+            // if users get any more commands a dictionary should probably be used for this as well
+            switch (args.Length)
             {
-                StregsystemUI.GeneralError("Unknown command!");
+                case 0:
+                    _UserInfo(cmd);
+                    break;
+                case 1:
+                    _QuickBuy(cmd, args.First());
+                    break;
+                case 2:
+                    _MultiBuy(cmd, args.First(), args.Last());
+                    break;
+                default:
+                    StregsystemUI.TooManyArgumentsError(cmd);
+                    break;
             }
         }
 
@@ -99,14 +114,14 @@ namespace Exam.Parser
 
             try
             {
-                int id = Int32.Parse(args[0]);
+                int id = Int32.Parse(args.First());
                 Product p = Stregsystem.GetProductById(id);
                 p.CanBeBoughtOnCredit = val;
                 StregsystemUI.GeneralMessage($"{p} can be bought on credit value set to: {val}");
             }
             catch (ProductIdNotFoundException)
             {
-                StregsystemUI.ProductNotFound(args[0]);
+                StregsystemUI.ProductNotFound(args.First());
             }
             catch (System.Exception e)
             {
@@ -138,6 +153,84 @@ namespace Exam.Parser
             catch (UsernameNotFoundException)
             {
                 StregsystemUI.UserNotFound(username);
+            }
+            catch (System.Exception e)
+            {
+                StregsystemUI.GeneralError(e.Message);
+            }
+        }
+
+        private void _UserInfo(string username)
+        {
+            try
+            {
+                User u = Stregsystem.GetUserByUsername(username);
+                StregsystemUI.UserInfo(u);
+            }
+            catch (UsernameNotFoundException)
+            {
+                StregsystemUI.UserNotFound(username);
+            }
+        }
+
+        private void _QuickBuy(string username, string id)
+        {
+            try
+            {
+                User u = Stregsystem.GetUserByUsername(username);
+                Product p = Stregsystem.GetProductById(Int32.Parse(id));
+
+                BuyTransaction t = new BuyTransaction(u, p);
+                Stregsystem.ExecuteTransaction(t);
+
+                StregsystemUI.UserBuysProduct(t);
+            }
+            catch (UsernameNotFoundException)
+            {
+                StregsystemUI.UserNotFound(username);
+            }
+            catch (ProductIdNotFoundException)
+            {
+                StregsystemUI.ProductNotFound(id);
+            }
+            catch (InsufficientCreditsExceptions e)
+            {
+                StregsystemUI.InsufficientCash(e.User, e.Product);
+            }
+            catch (System.Exception e)
+            {
+                StregsystemUI.GeneralError(e.Message);
+            }
+        }
+
+        // since multibuy should treat this as multiple transactions
+        // we will just try to get as many succesful transactions as possible
+        private void _MultiBuy(string username, string n, string id)
+        {
+            try
+            {
+                User u = Stregsystem.GetUserByUsername(username);
+                Product p = Stregsystem.GetProductById(Int32.Parse(id));
+
+                for (int i = 0; i < Int32.Parse(n); i++)
+                {
+                    BuyTransaction t = new BuyTransaction(u, p);
+                    Stregsystem.ExecuteTransaction(t);
+
+                    StregsystemUI.UserBuysProduct(t);
+                }
+            }
+            catch (UsernameNotFoundException)
+            {
+                StregsystemUI.UserNotFound(username);
+            }
+            catch (ProductIdNotFoundException)
+            {
+                StregsystemUI.ProductNotFound(id);
+            }
+            catch (InsufficientCreditsExceptions e)
+            {
+                StregsystemUI.InsufficientCash(e.User, e.Product);
             }
             catch (System.Exception e)
             {

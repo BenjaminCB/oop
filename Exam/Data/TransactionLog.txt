@@ -1,0 +1,34 @@
+BuyTransaction (1) at 11/18/2021 8:50:30 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 11: ½L vand & kildevand excl. pant - 12 kr
+BuyTransaction (1) at 11/18/2021 8:52:18 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 12 kr
+BuyTransaction (2) at 11/18/2021 8:52:36 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 133: FLAN Sandwich lørdag frokost - 35 kr
+BuyTransaction (3) at 11/18/2021 8:52:41 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 129: Cider  - 15 kr
+BuyTransaction (1) at 11/18/2021 9:03:57 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 12 kr
+BuyTransaction (2) at 11/18/2021 9:03:57 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 12 kr
+BuyTransaction (3) at 11/18/2021 9:03:57 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 12 kr
+BuyTransaction (4) at 11/18/2021 9:03:57 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 12 kr
+BuyTransaction (5) at 11/18/2021 9:03:57 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 12 kr
+BuyTransaction (6) at 11/18/2021 9:03:57 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 12 kr
+BuyTransaction (7) at 11/18/2021 9:03:57 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 12 kr
+BuyTransaction (8) at 11/18/2021 9:03:57 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 12 kr
+BuyTransaction (9) at 11/18/2021 9:03:57 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 12 kr
+BuyTransaction (10) at 11/18/2021 9:03:57 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 12 kr
+BuyTransaction (1) at 11/18/2021 9:23:40 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 12 kr
+BuyTransaction (1) at 11/18/2021 9:24:22 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 12 kr
+BuyTransaction (2) at 11/18/2021 9:24:33 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 131: 1,5L vand excl. pant - 12 kr
+InsertCashTransaction (3) at 11/18/2021 9:24:49 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) transaction amount 500
+BuyTransaction (1) at 11/18/2021 9:25:34 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 12 kr
+BuyTransaction (2) at 11/18/2021 9:25:41 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 133: FLAN Sandwich lørdag frokost - 35 kr
+BuyTransaction (3) at 11/18/2021 9:25:41 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 133: FLAN Sandwich lørdag frokost - 35 kr
+BuyTransaction (4) at 11/18/2021 9:25:41 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 133: FLAN Sandwich lørdag frokost - 35 kr
+InsertCashTransaction (5) at 11/18/2021 9:25:55 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) transaction amount 1000
+InsertCashTransaction (1) at 11/18/2021 9:27:11 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) transaction amount 100000
+BuyTransaction (2) at 11/18/2021 9:27:20 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 12 kr
+BuyTransaction (3) at 11/18/2021 9:27:20 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 12 kr
+BuyTransaction (4) at 11/18/2021 9:27:20 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 12 kr
+BuyTransaction (5) at 11/18/2021 9:27:20 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 12 kr
+BuyTransaction (6) at 11/18/2021 9:27:20 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 12 kr
+BuyTransaction (7) at 11/18/2021 9:27:20 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 12 kr
+BuyTransaction (8) at 11/18/2021 9:27:20 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 12 kr
+BuyTransaction (9) at 11/18/2021 9:27:20 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 12 kr
+BuyTransaction (10) at 11/18/2021 9:27:20 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 12 kr
+BuyTransaction (11) at 11/18/2021 9:27:20 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 12 kr

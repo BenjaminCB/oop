@@ -9,6 +9,7 @@ namespace Exam.UI
         void ProductNotFound(string product);
         void UserInfo(User user);
         void ArgumentsCountError(string command, int n);
+        void TooManyArgumentsError(string command);
         void UserBuysProduct(BuyTransaction transaction);
         void UserBuysProduct(int n, BuyTransaction transaction);
         void Close();

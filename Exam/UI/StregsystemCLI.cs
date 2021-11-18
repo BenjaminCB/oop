@@ -7,14 +7,16 @@ namespace Exam.UI
     public class StregsystemCLI : IStregsystemUI
     {
         private IStregsystem _Stregsystem;
-        private Panel _DisplayReponse;
+        private FixedQueue<string> _Responses;
         private bool _Running;
 
         public StregsystemCLI(IStregsystem stregsystem)
         {
             _Stregsystem = stregsystem;
-            _DisplayReponse = new Panel("There have been any responses yet.");;
             _Running = false;
+
+            _Responses = new FixedQueue<string>(4);
+            _Responses.Enqueue("Once you enter some commands the responses will appear here");
         }
 
         public void Start()
@@ -28,7 +30,10 @@ namespace Exam.UI
             Rule input = new Rule("[bold]INPUT[/]");
             input.Centered();
 
-            Panel instructionsPanel = new Panel("These are the instructions");
+            Panel instructionsPanel = new Panel(String.Join('\n'
+                    , "To buy a single product type your username followed by the product id."
+                    , "To buy a product multiple times type your username followed by the amount you want followed by the product id."
+                    , "To see information about your account simply type your username" ));
             instructionsPanel.Header = new PanelHeader("[bold]Instructions[/]");
             instructionsPanel.Expand = true;
 
@@ -46,10 +51,8 @@ namespace Exam.UI
                 // product table
                 table.AddColumn(new TableColumn(_ProductTable()));
 
-                // add response panel
-                _DisplayReponse.Header = responseHeader;
-                _DisplayReponse.Expand = true;
-                table.AddColumn(new TableColumn(_DisplayReponse));
+                // response table
+                table.AddColumn(new TableColumn(_ResponseTable()));
 
                 AnsiConsole.Write(table);
 
@@ -70,9 +73,9 @@ namespace Exam.UI
         private Table _ProductTable()
         {
             var table = new Table()
-                .AddColumn(new TableColumn("ID"))
-                .AddColumn(new TableColumn("Product"))
-                .AddColumn(new TableColumn("Price"));
+                .AddColumn(new TableColumn("[bold]ID[/]"))
+                .AddColumn(new TableColumn("[bold]Product[/]"))
+                .AddColumn(new TableColumn("[bold]Price[/]"));
 
             foreach (Product p in _Stregsystem.ActiveProducts)
             {
@@ -81,6 +84,19 @@ namespace Exam.UI
                 double price = (double) p.Price / 100;
                 table.AddRow(p.Id.ToString(), p.Name, price.ToString());
             }
+
+            return table;
+        }
+
+        private Table _ResponseTable()
+        {
+            var table = new Table()
+                .AddColumn(new TableColumn("[bold]Latest Reponses[/]"));
+
+            table.Border = TableBorder.Minimal;
+
+            foreach (string s in _Responses)
+                table.AddRow(s.EscapeMarkup());
 
             return table;
         }
@@ -95,10 +111,12 @@ namespace Exam.UI
         }
 
         public void UserNotFound(string username) =>
-            _DisplayReponse = new Panel($"User [{username}] not found!".EscapeMarkup());
+            _Responses.Enqueue($"User [{username}] not found!");
+            /* _Responses = new Panel($"User [{username}] not found!".EscapeMarkup()); */
 
         public void ProductNotFound(string product) =>
-            _DisplayReponse = new Panel($"Product [{product}] not found!".EscapeMarkup());
+            _Responses.Enqueue($"Product [{product}] not found!");
+            /* _Responses = new Panel($"Product [{product}] not found!".EscapeMarkup()); */
 
         public void UserInfo(User user)
         {
@@ -110,35 +128,41 @@ namespace Exam.UI
 
             string warning = user.Balance < 50 ? "Warning balance under 50" : "";
 
-            _DisplayReponse = new Panel
-            (
-                String.Join( '\n'
-                           , user
-                           , $"Username: {user.Username}"
-                           , $"Balance: {user.Balance}"
-                           , warning
-                           , "Purchases"
-                           , transactions )
-            );
+            _Responses.Enqueue( String.Join( '\n'
+                              , user
+                              , $"Username: {user.Username}"
+                              , $"Balance: {user.Balance}"
+                              , warning
+                              , "Purchases"
+                              , transactions ));
         }
 
         public void ArgumentsCountError(string command, int n) =>
-            _DisplayReponse = new Panel($"Command [{command}] takes {n} argument(s)!".EscapeMarkup());
+            _Responses.Enqueue($"Command [{command}] takes {n} argument(s)!");
+            /* _Responses = new Panel($"Command [{command}] takes {n} argument(s)!".EscapeMarkup()); */
+
+        public void TooManyArgumentsError(string command) =>
+            _Responses.Enqueue($"Too many arguments in command [{command}]!");
+            /* _Responses = new Panel($"Too many arguments in command [{command}]!".EscapeMarkup()); */
 
         public void UserBuysProduct(BuyTransaction transaction) =>
-            _DisplayReponse = new Panel(transaction.ToString());
+            _Responses.Enqueue(transaction.ToString());
+            /* _Responses = new Panel(transaction.ToString()); */
 
         public void UserBuysProduct(int n, BuyTransaction transaction) =>
-            _DisplayReponse = new Panel($"{transaction}x{n}");
+            _Responses.Enqueue($"{transaction}x{n}");
+            /* _Responses = new Panel($"{transaction}x{n}"); */
 
         public void GeneralError(string errorString) =>
-            _DisplayReponse = new Panel($"Error: {errorString}");
+            _Responses.Enqueue($"Error: {errorString}");
+            /* _Responses = new Panel($"Error: {errorString}"); */
 
         public void GeneralMessage(string msg) =>
-            _DisplayReponse = new Panel(msg);
+            _Responses.Enqueue(msg);
+            /* _Responses = new Panel(msg); */
 
         public void InsufficientCash(User user, Product product) =>
-            _DisplayReponse = new Panel
+            _Responses.Enqueue
             (
                 $"{user} tried purchasing {product} while only having a balance of {user.Balance}."
             );
