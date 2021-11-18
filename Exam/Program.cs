@@ -1,8 +1,4 @@
-﻿using System;
-using System.IO;
-using Exam.Parser;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Exam.Controller;
 using Exam.Logic;
 using Exam.UI;
 
@@ -14,8 +10,8 @@ namespace Exam
         {
             IStregsystem stregsystem = new Stregsystem();
             IStregsystemUI stregsystemUI = new StregsystemCLI(stregsystem);
-            stregsystemUI.UserInfo(stregsystem.GetUsers(u => true).First());
-            stregsystemUI.Start();
+            StregsystemController controller = new StregsystemController(stregsystem, stregsystemUI);
+            controller.StregsystemUI.Start();
         }
     }
 }

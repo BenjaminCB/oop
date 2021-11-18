@@ -48,7 +48,6 @@ namespace Exam.Logic
         public InsertCashTransaction AddCreditsToAccount(User user, int amount) =>
             new InsertCashTransaction(user, amount);
 
-        // TODO find out if i want try catch here or later
         public void ExecuteTransaction(Transaction t)
         {
             t.Execute();

@@ -59,6 +59,11 @@ namespace Exam.UI
                 // Take user input
                 AnsiConsole.Write(input);
                 string command = Console.ReadLine();
+
+                // upon entered command create throw event
+                CommandEnteredEventArgs args = new CommandEnteredEventArgs();
+                args.Command = command;
+                OnCommandEntered(args);
             }
         }
 
@@ -90,10 +95,10 @@ namespace Exam.UI
         }
 
         public void UserNotFound(string username) =>
-            _DisplayReponse = new Panel($"User [{username}] not found!");
+            _DisplayReponse = new Panel($"User [{username}] not found!".EscapeMarkup());
 
         public void ProductNotFound(string product) =>
-            _DisplayReponse = new Panel($"Product [{product}] not found!");
+            _DisplayReponse = new Panel($"Product [{product}] not found!".EscapeMarkup());
 
         public void UserInfo(User user)
         {
@@ -117,8 +122,8 @@ namespace Exam.UI
             );
         }
 
-        public void TooManyArgumentsError(string command) =>
-            _DisplayReponse = new Panel($"Command [{command}] has too many arguments!");
+        public void ArgumentsCountError(string command, int n) =>
+            _DisplayReponse = new Panel($"Command [{command}] takes {n} argument(s)!".EscapeMarkup());
 
         public void UserBuysProduct(BuyTransaction transaction) =>
             _DisplayReponse = new Panel(transaction.ToString());
@@ -128,6 +133,9 @@ namespace Exam.UI
 
         public void GeneralError(string errorString) =>
             _DisplayReponse = new Panel($"Error: {errorString}");
+
+        public void GeneralMessage(string msg) =>
+            _DisplayReponse = new Panel(msg);
 
         public void InsufficientCash(User user, Product product) =>
             _DisplayReponse = new Panel

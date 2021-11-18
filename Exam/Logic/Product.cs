@@ -12,7 +12,7 @@ namespace Exam.Logic
         public int Price { get; }
 
         public virtual bool Active { get; set; }
-        public bool CanBeBoughtOnCredit { get; }
+        public bool CanBeBoughtOnCredit { get; set; }
 
         public Product(string name, int price, bool active)
         {
