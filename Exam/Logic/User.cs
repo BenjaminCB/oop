@@ -15,7 +15,6 @@ namespace Exam.Logic
 
         // can only have 0-9 a-z and '_'
         public string Username { get; }
-        // TODO check correctness
         private Regex _UsernameValidator = new Regex(@"^[a-z0-9_]+$");
 
 

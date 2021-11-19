@@ -15,8 +15,27 @@ namespace Exam.Parser
             _Delimiter = delimiter;
         }
 
-        public IEnumerable<T> Parse() =>
-            File.ReadAllLines(_File.FullName).Skip(1).Select(s => _ParseLine(s));
+        public IEnumerable<T> Parse()
+        {
+            List<T> successes = new List<T>();
+
+            // go through all the lines and try to parse them
+            // if any error occurs we simply skip it
+            // TODO upon startup of the program errors should be shown on screen
+            foreach (string s in File.ReadAllLines(_File.FullName).Skip(1))
+            {
+                try
+                {
+                    successes.Add(_ParseLine(s));
+                }
+                catch
+                {
+                    continue;
+                }
+            }
+
+            return successes;
+        }
 
         protected abstract T _ParseLine(string s);
     }
