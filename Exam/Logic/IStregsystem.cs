@@ -13,6 +13,9 @@ namespace Exam.Logic
         IEnumerable<User> GetUsers(Func<User, bool> prodicate);
         User GetUserByUsername(string username);
         void ExecuteTransaction(Transaction t);
+
+        // c# docs do not recommend making your own delegate
+        // but using this is great either as a object reference is sent but never used
         event EventHandler<UserBalanceWarningEventArgs> UserBalanceWarning;
     }
 }

@@ -9,7 +9,9 @@ namespace Exam.Logic
         private static int _Id = 1;
 
         public User User { get; }
+
         public DateTime Date { get; }
+
         private int _Amount;
         public int Amount
         {

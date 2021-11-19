@@ -9,6 +9,7 @@ namespace Exam.Parser
         public UserCSVParser(FileInfo file, char delimiter)
             : base(file, delimiter) {}
 
+        // skips id column
         protected override User _ParseLine(string s)
         {
             string[] vals = s.Split(_Delimiter);

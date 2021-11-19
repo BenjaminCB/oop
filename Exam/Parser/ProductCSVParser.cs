@@ -10,6 +10,7 @@ namespace Exam.Parser
         public ProductCSVParser(FileInfo file, char delimiter)
             : base(file, delimiter) {}
 
+        // skips id column
         protected override Product _ParseLine(string s)
         {
             string[] vals = s.Split(_Delimiter);

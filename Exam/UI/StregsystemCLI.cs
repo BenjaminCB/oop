@@ -15,16 +15,19 @@ namespace Exam.UI
             _Stregsystem = stregsystem;
             _Running = false;
 
+            // the latest responses that the system outputs to the user
             _Responses = new FixedQueue<string>(4);
             _Responses.Enqueue("Once you enter some commands the responses will appear here");
         }
 
         public void Start()
         {
+            // we should not be able to start the UI if it is already running
             if (_Running) return;
 
             _Running = true;
 
+            // create various UI elements
             Rule header = new Rule("[bold]STREGSYSTEM[/]");
             header.Centered();
             Rule input = new Rule("[bold]INPUT[/]");
@@ -63,13 +66,14 @@ namespace Exam.UI
                 AnsiConsole.Write(input);
                 string command = Console.ReadLine();
 
-                // upon entered command create throw event
+                // upon entered command create and throw event
                 CommandEnteredEventArgs args = new CommandEnteredEventArgs();
                 args.Command = command;
                 OnCommandEntered(args);
             }
         }
 
+        // create table of all the active products
         private Table _ProductTable()
         {
             var table = new Table()
@@ -88,6 +92,7 @@ namespace Exam.UI
             return table;
         }
 
+        // create a table of containing all the latest responses
         private Table _ResponseTable()
         {
             var table = new Table()
@@ -107,16 +112,15 @@ namespace Exam.UI
 
         private void OnCommandEntered(CommandEnteredEventArgs e)
         {
+            // if an event handler is defined call it
             if (CommandEntered != null) CommandEntered(this, e);
         }
 
         public void UserNotFound(string username) =>
             _Responses.Enqueue($"User [{username}] not found!");
-            /* _Responses = new Panel($"User [{username}] not found!".EscapeMarkup()); */
 
         public void ProductNotFound(string product) =>
             _Responses.Enqueue($"Product [{product}] not found!");
-            /* _Responses = new Panel($"Product [{product}] not found!".EscapeMarkup()); */
 
         public void UserInfo(User user)
         {
@@ -139,27 +143,21 @@ namespace Exam.UI
 
         public void ArgumentsCountError(string command, int n) =>
             _Responses.Enqueue($"Command [{command}] takes {n} argument(s)!");
-            /* _Responses = new Panel($"Command [{command}] takes {n} argument(s)!".EscapeMarkup()); */
 
         public void TooManyArgumentsError(string command) =>
             _Responses.Enqueue($"Too many arguments in command [{command}]!");
-            /* _Responses = new Panel($"Too many arguments in command [{command}]!".EscapeMarkup()); */
 
         public void UserBuysProduct(BuyTransaction transaction) =>
             _Responses.Enqueue(transaction.ToString());
-            /* _Responses = new Panel(transaction.ToString()); */
 
         public void UserBuysProduct(int n, BuyTransaction transaction) =>
             _Responses.Enqueue($"{transaction}x{n}");
-            /* _Responses = new Panel($"{transaction}x{n}"); */
 
         public void GeneralError(string errorString) =>
             _Responses.Enqueue($"Error: {errorString}");
-            /* _Responses = new Panel($"Error: {errorString}"); */
 
         public void GeneralMessage(string msg) =>
             _Responses.Enqueue(msg);
-            /* _Responses = new Panel(msg); */
 
         public void InsufficientCash(User user, Product product) =>
             _Responses.Enqueue

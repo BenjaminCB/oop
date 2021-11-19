@@ -11,6 +11,7 @@ namespace Exam.UI
         public int MaxSize { get; }
         private Queue<T> _Queue;
 
+        // takes the parameter maxSize which will the maximum amount of elements in the queue
         public FixedQueue(int maxSize)
         {
             if (maxSize < 0) throw new ArgumentException("maxSize cannot be negative");
@@ -21,6 +22,8 @@ namespace Exam.UI
         public void Enqueue(T t)
         {
             _Queue.Enqueue(t);
+
+            // if there are too many elements in the queue simply dequeue the last one
             if (_Queue.Count > MaxSize) _Queue.Dequeue();
         }
 

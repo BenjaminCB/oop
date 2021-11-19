@@ -16,31 +16,21 @@ namespace Exam.Logic
 
         public Stregsystem()
         {
-            // Got errors when typecasting IEnumerable<User> to List<User>
-            // so doing it this way
-            // Parse orders from file
+            // Parse users from file
             FileInfo userFile = new FileInfo(Path.Combine(Directory.GetCurrentDirectory(), "users.csv"));
             UserCSVParser userParser = new UserCSVParser(userFile, ',');
-            var us = userParser.Parse();
-
-            Users = new List<User>();
-            foreach (User u in us)
-                Users.Add(u);
+            Users = userParser.Parse().ToList();
 
             // Parse products from file
             FileInfo productFile = new FileInfo(Path.Combine(Directory.GetCurrentDirectory(), "products.csv"));
             ProductCSVParser productParser = new ProductCSVParser(productFile, ';');
-            var ps = productParser.Parse();
-
-            Products = new List<Product>();
-            foreach(Product p in ps)
-                Products.Add(p);
+            Products = productParser.Parse().ToList();
 
             Transactions = new List<Transaction>();
+
+            // the file that we write to when a transaction has been executed succesfully
             _LogFile = Path.Combine(Directory.GetCurrentDirectory(), "Data", "TransactionLog.txt");
         }
-
-        public void AddUser(User user) => Users.Add(user);
 
         public BuyTransaction BuyProduct(User user, Product product) =>
             new BuyTransaction(user, product);
@@ -50,8 +40,11 @@ namespace Exam.Logic
 
         public void ExecuteTransaction(Transaction t)
         {
+            // assume that the transaction executes properly otherwise we catch it later
             t.Execute();
             Transactions.Add(t);
+
+            // send UserBalanceWorning event if neccessary
             if (t.User.Balance < 500)
             {
                 UserBalanceWarningEventArgs args = new UserBalanceWarningEventArgs();
@@ -59,8 +52,7 @@ namespace Exam.Logic
                 OnUserBalanceWorning(args);
             }
 
-            // TODO check if this writes everything and overwrites on restart
-            // Probably should do this async
+            // not sure if this should append unconditionally or only during program runtime
             using StreamWriter file = File.AppendText(_LogFile);
             file.WriteLine(t);
         }
@@ -96,6 +88,7 @@ namespace Exam.Logic
 
         private void OnUserBalanceWorning(UserBalanceWarningEventArgs e)
         {
+            // if a handler for UserBalanceWarning has been defined call it
             if (UserBalanceWarning != null) UserBalanceWarning(this, e);
         }
     }

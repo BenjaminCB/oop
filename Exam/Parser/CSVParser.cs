@@ -6,8 +6,8 @@ namespace Exam.Parser
 {
     public abstract class CSVParser<T>
     {
-        private FileInfo _File;
-        protected char _Delimiter;
+        private FileInfo _File { get; }
+        protected char _Delimiter { get; }
 
         public CSVParser(FileInfo file, char delimiter)
         {

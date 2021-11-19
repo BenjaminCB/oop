@@ -30,6 +30,7 @@ namespace Exam.Parser
 
         public void ParseCommand(string command)
         {
+            // split command into command and arguments
             string[] words = command.Split(' ');
             string cmd = words.First();
             string[] args = words.Skip(1).ToArray();
@@ -87,8 +88,11 @@ namespace Exam.Parser
 
             try
             {
+                // try to parse arguments
                 int id = Int32.Parse(args[0]);
                 Product p = Stregsystem.GetProductById(id);
+
+                // if successful change value and notify user
                 p.Active = val;
                 StregsystemUI.GeneralMessage($"{p} active value set to: {val}");
             }
@@ -114,8 +118,11 @@ namespace Exam.Parser
 
             try
             {
+                // try to parse arguments
                 int id = Int32.Parse(args.First());
                 Product p = Stregsystem.GetProductById(id);
+
+                // if successful change value and notify user
                 p.CanBeBoughtOnCredit = val;
                 StregsystemUI.GeneralMessage($"{p} can be bought on credit value set to: {val}");
             }
@@ -142,12 +149,15 @@ namespace Exam.Parser
 
             try
             {
-                int coin = Int32.Parse(args.Last());
-
+                // try to parse arguments
+                int credits = Int32.Parse(args.Last());
                 User u = Stregsystem.GetUserByUsername(username);
-                Transaction t = new InsertCashTransaction(u, coin);
+                Transaction t = new InsertCashTransaction(u, credits);
+
+                // if successful try to execute transaction
                 Stregsystem.ExecuteTransaction(t);
 
+                // if that succeds notify user
                 StregsystemUI.GeneralMessage(t.ToString());
             }
             catch (UsernameNotFoundException)
@@ -177,12 +187,15 @@ namespace Exam.Parser
         {
             try
             {
+                // try to get user and product
                 User u = Stregsystem.GetUserByUsername(username);
                 Product p = Stregsystem.GetProductById(Int32.Parse(id));
 
+                // if successful create transaction and try to execute
                 BuyTransaction t = new BuyTransaction(u, p);
                 Stregsystem.ExecuteTransaction(t);
 
+                // if this succeds notify user
                 StregsystemUI.UserBuysProduct(t);
             }
             catch (UsernameNotFoundException)
@@ -203,15 +216,17 @@ namespace Exam.Parser
             }
         }
 
-        // since multibuy should treat this as multiple transactions
+        // since multibuy should be treated as multiple transactions
         // we will just try to get as many succesful transactions as possible
         private void _MultiBuy(string username, string n, string id)
         {
             try
             {
+                // try to get user and product
                 User u = Stregsystem.GetUserByUsername(username);
                 Product p = Stregsystem.GetProductById(Int32.Parse(id));
 
+                // create and execute as many transaction as possible
                 for (int i = 0; i < Int32.Parse(n); i++)
                 {
                     BuyTransaction t = new BuyTransaction(u, p);
@@ -237,6 +252,5 @@ namespace Exam.Parser
                 StregsystemUI.GeneralError(e.Message);
             }
         }
-
     }
 }

@@ -17,6 +17,9 @@ namespace Exam.UI
         void GeneralError(string errorString);
         void GeneralMessage(string msg);
         void Start();
+
+        // c# docs do not recommend making your own delegate
+        // but using this is great either as a object reference is sent but never used
         event EventHandler<CommandEnteredEventArgs> CommandEntered;
     }
 }
