@@ -31,7 +31,6 @@ namespace Exam.Logic
         // ([^\W-])+ capture at least one letter or number
         // (\.([^\W_]|[.-])+)+ capture at least one . followed by atleast one
         // letter number or .-
-        // TODO check correctness
         private Regex _EmailValidator =
             new Regex(@"^[\w.-]+@([^\W_])+-*(\.([^\W_]|[.-])+)+([^\W_])+$");
 

@@ -74,8 +74,6 @@ namespace Exam.Parser
             }
         }
 
-        // TODO refactor _ActivateGeneral and _CreditGeneral
-        // TODO refactor argument length checker
         private void _Activate(string[] args) => _ActivateGeneral(":activate", true, args);
         private void _Deactivate(string[] args) => _ActivateGeneral(":deactivate", false, args);
         private void _ActivateGeneral(string cmd, bool val, string[] args)

@@ -57,7 +57,6 @@ namespace Exam.Logic
             file.WriteLine(t);
         }
 
-        // TODO refactor GetProductById and GetUserByEsername
         public Product GetProductById(int id)
         {
             if (!Products.Exists(p => p.Id == id))

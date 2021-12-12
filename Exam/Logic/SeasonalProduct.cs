@@ -9,7 +9,6 @@ namespace Exam.Logic
 
         public override bool Active
         {
-            // TODO check if there is an each case error
             get => !(DateTime.Now.Date < SeasonStartDate.Date ||
                      DateTime.Now.Date > SeasonEndDate.Date);
         }

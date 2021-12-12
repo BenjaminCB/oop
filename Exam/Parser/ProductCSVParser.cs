@@ -16,7 +16,6 @@ namespace Exam.Parser
             string[] vals = s.Split(_Delimiter);
 
             // replace html tags and double quotes
-            // TODO make the matching a little more precise
             string name = Regex.Replace(vals[1], @"<[^>]+>", m => "").Replace("\"","");
 
             int price = Int32.Parse(vals[2]);
