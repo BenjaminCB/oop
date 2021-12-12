@@ -73,5 +73,6 @@ namespace Exam.Logic
 
         // every id is unique
         public override int GetHashCode() => Id;
+
     }
 }

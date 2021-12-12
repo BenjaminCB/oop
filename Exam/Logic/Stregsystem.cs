@@ -47,9 +47,8 @@ namespace Exam.Logic
             // send UserBalanceWorning event if neccessary
             if (t.User.Balance < 500)
             {
-                UserBalanceWarningEventArgs args = new UserBalanceWarningEventArgs();
-                args.User = t.User;
-                OnUserBalanceWorning(args);
+                UserBalanceWarningEventArgs args = new UserBalanceWarningEventArgs(t.User.Balance);
+                OnUserBalanceWarning(args);
             }
 
             // not sure if this should append unconditionally or only during program runtime
@@ -85,7 +84,7 @@ namespace Exam.Logic
 
         public event EventHandler<UserBalanceWarningEventArgs> UserBalanceWarning;
 
-        private void OnUserBalanceWorning(UserBalanceWarningEventArgs e)
+        private void OnUserBalanceWarning(UserBalanceWarningEventArgs e)
         {
             // if a handler for UserBalanceWarning has been defined call it
             if (UserBalanceWarning != null) UserBalanceWarning(this, e);
