@@ -2,8 +2,12 @@ namespace Exam.Exception
 {
     public class InvalidEmailException : System.Exception
     {
-        // TODO make the exception be more descriptive of the error
-        public InvalidEmailException()
-            : base("This is an invalid email") {}
+        public string Email { get; }
+
+        public InvalidEmailException(string email)
+            : base($"{email} is an invalid email")
+        {
+            Email = email;
+        }
     }
 }

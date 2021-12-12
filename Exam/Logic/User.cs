@@ -51,14 +51,14 @@ namespace Exam.Logic
 
             // validate username
             if (!_UsernameValidator.IsMatch(username))
-                throw new InvalidUsernameException();
+                throw new InvalidUsernameException(username);
             Username = username;
 
             Balance = balance;
 
             // validate email
             if (!_EmailValidator.IsMatch(email))
-                throw new InvalidEmailException();
+                throw new InvalidEmailException(email);
             Email = email;
         }
 
