@@ -47,7 +47,7 @@ namespace Exam.Logic
             // send UserBalanceWorning event if neccessary
             if (t.User.Balance < 500)
             {
-                UserBalanceWarningEventArgs args = new UserBalanceWarningEventArgs(t.User.Balance);
+                UserBalanceWarningEventArgs args = new UserBalanceWarningEventArgs(t.User);
                 OnUserBalanceWarning(args);
             }
 

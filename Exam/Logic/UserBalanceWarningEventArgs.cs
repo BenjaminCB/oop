@@ -4,11 +4,11 @@ namespace Exam.Logic
 {
     public class UserBalanceWarningEventArgs : EventArgs
     {
-        public int Balance { get; set; }
+        public User User { get; }
 
-        public UserBalanceWarningEventArgs(int balance) : base()
+        public UserBalanceWarningEventArgs(User user) : base()
         {
-            Balance = balance;
+            User = user;
         }
     }
 }

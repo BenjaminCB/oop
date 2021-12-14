@@ -82,12 +82,7 @@ namespace Exam.UI
                 .AddColumn(new TableColumn("[bold]Price[/]"));
 
             foreach (Product p in _Stregsystem.ActiveProducts)
-            {
-                // Spectre seems a little funky when using AddRow
-                // so i have to convert to strings manually
-                double price = (double) p.Price / 100;
-                table.AddRow(p.Id.ToString(), p.Name, price.ToString());
-            }
+                table.AddRow(p.Id.ToString(), p.Name, p.Price.ToString());
 
             return table;
         }

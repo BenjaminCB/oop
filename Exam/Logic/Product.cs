@@ -36,6 +36,6 @@ namespace Exam.Logic
             CanBeBoughtOnCredit = false;
         }
 
-        public override string ToString() => $"{Id}: {Name} - {(double) Price / 100} kr";
+        public override string ToString() => $"{Id}: {Name} - {Price} kr";
     }
 }
