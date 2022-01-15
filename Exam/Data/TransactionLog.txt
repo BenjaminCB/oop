@@ -32,3 +32,19 @@ BuyTransaction (8) at 11/18/2021 9:27:20 PM: Nancy Davolio (ndavo@sample.stregsy
 BuyTransaction (9) at 11/18/2021 9:27:20 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 12 kr
 BuyTransaction (10) at 11/18/2021 9:27:20 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 12 kr
 BuyTransaction (11) at 11/18/2021 9:27:20 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 12 kr
+BuyTransaction (1) at 12/14/2021 3:24:57 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 134: FLAN Chili con Carne Fredag afte - 5000 kr
+BuyTransaction (2) at 12/14/2021 3:24:57 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 134: FLAN Chili con Carne Fredag afte - 5000 kr
+BuyTransaction (3) at 12/14/2021 3:25:16 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 134: FLAN Chili con Carne Fredag afte - 5000 kr
+BuyTransaction (4) at 12/14/2021 3:25:16 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 134: FLAN Chili con Carne Fredag afte - 5000 kr
+BuyTransaction (5) at 12/14/2021 3:25:16 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 134: FLAN Chili con Carne Fredag afte - 5000 kr
+BuyTransaction (6) at 12/14/2021 3:25:16 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 134: FLAN Chili con Carne Fredag afte - 5000 kr
+BuyTransaction (7) at 12/14/2021 3:25:48 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 1200 kr
+BuyTransaction (8) at 12/14/2021 3:25:48 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 1200 kr
+BuyTransaction (9) at 12/14/2021 3:25:48 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 1200 kr
+BuyTransaction (10) at 12/14/2021 3:25:48 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 1200 kr
+BuyTransaction (11) at 12/14/2021 3:25:48 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 1200 kr
+BuyTransaction (12) at 12/14/2021 3:25:48 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 1200 kr
+BuyTransaction (13) at 12/14/2021 3:25:48 PM: Nancy Davolio (ndavo@sample.stregsystem.dk) purchased 135: Monster - 1200 kr
+BuyTransaction (1) at 12/14/2021 3:27:08 PM: Steven Buchanan (sbuch@sample.stregsystem.dk) purchased 8: ½L Skummetmælk (2x¼) - 375 kr
+BuyTransaction (1) at 12/14/2021 3:29:23 PM: Robert King (rking@sample.stregsystem.dk) purchased 134: FLAN Chili con Carne Fredag afte - 5000 kr
+InsertCashTransaction (2) at 12/14/2021 3:30:03 PM: Robert King (rking@sample.stregsystem.dk) transaction amount 100000
